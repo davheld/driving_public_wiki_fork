@@ -39,7 +39,7 @@ The velodyne gives about 140,000 points per spin, with a spin every 100ms. The p
 
 # Navigation
 
-The navigation module generates an appropriate trajectory for the car to realize the mission and avoid obstacles while respecting the road regulations. It relies on the definition of the road network [[RNDF|RNDFSpecification]], which describes where are the roads, the lanes, the stop signs, the pedestrian crossings, etc. in UTM coordinates. Then the mission is expressed as a set of check points in the RNDF, similar to how you would describe a route as a sequence of roads. 
+The navigation module generates an appropriate trajectory for the car to realize the mission and avoid obstacles while respecting the road regulations. It relies on the definition of the road network [[RNDF|RNDF Specification]], which describes where are the roads, the lanes, the stop signs, the pedestrian crossings, etc. in UTM coordinates. Then the mission is expressed as a set of check points in the RNDF, similar to how you would describe a route as a sequence of roads. 
 
 In the absence of obstacles (or when the perception module is turned off), the planner generates a route that will connect those check points, and follows the centerline, stopping at the stop signs. When obstacles are detected, it will compute a trajectory that avoids the obstacles, or follow them (the car in front for instance), compute priorities at stop intersections, etc.
 
