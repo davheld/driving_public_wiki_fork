@@ -4,7 +4,7 @@
 * The current version of the RNDF parser / writer only supports a single intersection for all traffic lights.
 
 
-# General
+## General
 
 The RNDF is a tab-delimited ASCII file. Within the RNDF, strings have a maximum length of 128 characters, and do not contain any spaces, backslashes, or *. Integers are always positive and have a maximum value of 32,768. The RNDF has the following form:
 
@@ -33,7 +33,7 @@ The _\<optional file header\>_ may include the following:
 These optional file header fields are provided for convenience, and the format is unspecified. Blank lines may be added to the file for formatting purposes. C-style comments are delimited by “/*” and “*/” and are always placed at the end of the line.
 
 
-# Segments
+## Segments
 
 
 Each _\<segment\>_ has the following format:
@@ -60,7 +60,7 @@ The _\<optional segment header\>_ may contain the following elements:
 The segment_name attribute of the segment is used for the street name, such as “Campus_Drive”.
 
 
-# Lanes
+## Lanes
 
 
 Each _\<lane\>_ has the following format:
@@ -99,7 +99,7 @@ The _\<optional lane header\>_ contains some or all of the following elements:
 
 A **lane** may have multiple checkpoints, stop signs, entry waypoints, entry perimeterpoints, exit waypoints, crosswalks or traffic lights.
 
-# Crosswalks
+## Crosswalks
 
 Each _\<crosswalk\>_ has the following format:
 
@@ -112,7 +112,7 @@ Each _\<crosswalk\>_ has the following format:
 The _crosswalk_id_ is constructed from the number of the segment in which it is contained. For example, if segment 17 has two crosswalks, they would be named “17.1” and “17.2”. A crosswalk always consists of two coordinates, **crosswalk_p1** and **crosswalk_p2**. The _latitude_ and _longitude_ fields are fixed points with six decimal places and express the waypoint locations in decimal-degrees, using the ITRF00 reference frame and the GRS80 ellipsoid. Points in the northern and western hemispheres have positive latitude and negative longitude, respectively.
 
 
-# Waypoints
+## Waypoints
 
 A _\<waypoint\>_ has the following format:
 
@@ -120,7 +120,7 @@ A _\<waypoint\>_ has the following format:
 
 The _waypoint_id_ is constructed from the lane_id. The first waypoint of lane 17.1 is thus named “17.1.1”. The _latitude_ and _longitude_ fields are fixed points with six decimal places and express the waypoint locations in decimal-degrees, using the ITRF00 reference frame and the GRS80 ellipsoid. Points in the northern and western hemispheres have positive latitude and negative longitude, respectively.
 
-# Intersections
+## Intersections
 
 An _\<intersection\>_ has the following format:
 
@@ -135,7 +135,7 @@ An _\<intersection\>_ has the following format:
 The **intersection** is merely a container for a group of traffic lights, e.g. on one particular intersection.
 
 
-# Traffic Lights
+## Traffic Lights
 
 A _\<trafficlight\>_ has the following format:
 
