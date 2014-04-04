@@ -1,5 +1,3 @@
-# Welcome
-
 Welcome to the Stanford Autonomous Driving Project's Software wiki. This site is intended to be the common repository for information and documentation related to our driving software.
 
 ## Documentation
