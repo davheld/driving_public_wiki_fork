@@ -1,4 +1,4 @@
-** TO BE ADJUSTED WITH THE LATEST PROCEDURE**
+** TO BE ADJUSTED WITH THE LATEST PROCEDURE **
 
 * Power up. Note that it's best to power up the trimble and applanix outside and keep the car perfectly still while they initialize.
 * launch junior2.launch, etc.
