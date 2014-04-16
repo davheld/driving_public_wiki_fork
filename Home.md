@@ -10,5 +10,4 @@ Welcome to the Stanford Autonomous Driving Project's Software wiki. This site is
 
 * [[How to run an autonomous demo]]: from powering up to starting the software, with user information about the drive by wire system. TODO
 * [[Software installation]]: from installing Ubuntu to compiling the code.
-* [[SSH tunneling and Kerberos]]: how to setup you .ssh/config file to access robo, etc. and setup kerberos to ease authentication. (TODO: add AFS instructions)
 * [[Using rndf_edit]]
