@@ -6,13 +6,13 @@ If no imagery path is given, imagery is read from ```$VLR_ROOT/data/imagery```. 
 
 The GUI for ```rndf_edit``` is context based through the buttons at the top of the window. Contexts are "Waypoint", "Lane", "Segment", "Exit", "Perimeter Point", etc. Within each context you can perform add, move, select, etc. functions with the following keyboard / mouse events (note that all keyboard / mouse inputs use the <Ctrl> key):
 
-* <Ctrl> a: append
-* <Ctrl> d: delete
-* <Ctrl> s: toggle Stop Point
-* <Ctrl> c: toggle Check Point
-* <Ctrl> left-click: selects and moves the item
-* <Ctrl> right-click: selects and rotates the item, if sensible in that context
-* <Ctrl> <Shift> I: toggles between imagery types (Google should be displayed) 
+* `<Ctrl> a`: append
+* `<Ctrl> d`: delete
+* `<Ctrl> s`: toggle Stop Point
+* `<Ctrl> c`: toggle Check Point
+* `<Ctrl> left-click`: selects and moves the item
+* `<Ctrl> right-click`: selects and rotates the item, if sensible in that context
+* `<Ctrl> <Shift> I`: toggles between imagery types (Google should be displayed) 
 
 "Stop" point is for a Stop Sign.
 
