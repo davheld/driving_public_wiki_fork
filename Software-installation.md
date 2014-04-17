@@ -14,7 +14,8 @@ We currently use ROS Hydro.
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu precise main" > /etc/apt/sources.list.d/ros-latest.list'
 wget http://packages.ros.org/ros.key -O - | sudo apt-key add -
 sudo apt-get update
-sudo apt-get install ros-hydro-desktop python-rosdep
+sudo apt-get install ros-hydro-desktop python-rosdep python-wstool
+sudo rosdep init
 ```
 
 ## Gperftools
@@ -57,22 +58,39 @@ You can create your workspace anywhere you want and it can have any name. Here i
 
 ```
 source /opt/ros/hydro/setup.bash
-mkdir -p ~/catkin_ws/src
-catkin_init_workspace ~/catkin_ws/src
+mkdir -p ~/catkin_ws
+cd ~/catkin_ws
+wstool init src
+catkin_make
+source devel/setup.bash
 ```
+
+Finally, add ```source ~/catkin_ws/devel/setup.bash``` in your ```.bashrc``` file so that your environment will be sourced each time you open a terminal.
 
 # Getting and compiling the code
 
-Our code is now hosted on github as a private repo. To gain access, send you github user name (create an account if necessary) to Brice or Austin. Then clone the code in the ```~/catkin_ws/src``` folder.
+## Getting the code
+
+Our code is now hosted on github as a set of repositories, some of which are private:
+- [stdr_libraries](https://github.com/StanfordDrivingTeam/stdr_libraries): contains some library packages
+- [tf](https://github.com/StanfordDrivingTeam/tf): a custom version of the TF package needed until we migrate to TF2
+- [driving_public](https://github.com/StanfordDrivingTeam/driving_public): some public packages, that allow to work with our log files
+- [driving](https://github.com/StanfordDrivingTeam/driving): a private repo that holds all our private code. To gain access, send you github user name (create an account if necessary) to Brice or Austin.
+
+We use `wstool` to pull all those repos. Get the rosinstall (from the _driving_ or _driving_public_ repo) and copy it as `~/catkin_ws/src/.rosinstall`. Then from the src folder, do `wstool up`, which will clone / pull from the github repos.
+
+## Installing the dependencies
 
 Before building, you need to install the dependencies:
 
 ```
-~/catkin_ws/src/rdr_v2/scripts/install_rosdep_yaml.sh
-rosdep install --from-paths ~/catkin_ws/src/rdr_v2/packages -i -y
+rosdep update
+rosdep install --from-paths ~/catkin_ws/src -i -y
 ```
 
-Then you are ready to build:
+## Building
+
+Finally you are ready to build:
 
 ```
 cd ~/catkin_ws
@@ -92,7 +110,7 @@ make download_extra_data
 
 In the future, to rebuild the code, say after you have made some changes, you either use catkin_make from the workspace root folder, or use make from the build folder.
 
-Finally, add ```source ~/catkin_ws/devel/setup.bash``` in your ```.bashrc``` file so that your environment will be sourced each time you open a terminal.
+
 
 ## Misc
 
