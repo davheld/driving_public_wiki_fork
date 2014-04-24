@@ -23,3 +23,20 @@ Now, to visualize the data, run rviz:
 ```
 rosrun rviz rviz
 ```
+
+Within rviz, on the left, under Global Options, set Fixed Frame to "smooth" to view the world in smooth coordinates.
+
+On the right, under Current View, change Target Frame to base_link.  Click "Zero" to center the screen on the car.
+
+Under Grid on the left, change Reference Frame to base_link, change Plane Cell Count to 1000 and Cell Size to 10.
+
+Next, click "Add", click the tab "by topic", and scroll down to: /velodyne-> /points_agg -> PointCloud2
+
+For the points, change:
+Selectable: No
+style: Points
+Decay Time: 0.15
+Color Transform: Intensity
+Use rainbow: No
+
+Next, click "Add" and select the Passat.
