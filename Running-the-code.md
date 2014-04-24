@@ -33,10 +33,10 @@ Under Grid on the left, change Reference Frame to base_link, change Plane Cell C
 Next, click "Add", click the tab "by topic", and scroll down to: /velodyne-> /points_agg -> PointCloud2
 
 For the points, change:
-Selectable: No
-style: Points
-Decay Time: 0.15
-Color Transform: Intensity
-Use rainbow: No
+* Selectable: No
+* style: Points
+* Decay Time: 0.15
+* Color Transform: Intensity
+* Use rainbow: No
 
 Next, click "Add" and select the Passat.
