@@ -2,11 +2,7 @@ We have several TB of data recorded on Junior over the year. Here is some instru
 
 ## Getting the data logs
 
-All the data is located on the AFS server. 
-
-All the logs can be accessed from our web server too: http://driving.stanford.edu/data/logs
-
-The AFS file system is accessible via various means, the most common of which is to SSH through `robo` first. Once you are connected to `robo`, the data is located in `/afs/cs/group/driving/data/logs/`. So copying data to and from your local hard drive will involve `scp` or even better `rsync`.
+All the data is located on the AFS server. The AFS file system is accessible via various means, the most common of which is to SSH through `robo` first. Once you are connected to `robo`, the data is located in `/afs/cs/group/driving/data/logs/`. So copying data to and from your local hard drive will involve `scp` or even better `rsync`.
 
 ### Book-keeping remarks
 
