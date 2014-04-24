@@ -10,4 +10,5 @@ Welcome to the Stanford Autonomous Driving Project's Software wiki. This site is
 
 * [[How to run an autonomous demo]]: from powering up to starting the software, with user information about the drive by wire system. TODO
 * [[Software installation]]: from installing Ubuntu to compiling the code.
+* [[Running the code]]
 * [[Using rndf_edit]]
