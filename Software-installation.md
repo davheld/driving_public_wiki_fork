@@ -17,6 +17,18 @@ sudo apt-get update
 sudo apt-get install ros-hydro-desktop python-rosdep python-wstool
 sudo rosdep init
 ```
+Note: If you get the error:
+```
+ERROR: default sources list file already exists:
+	/etc/ros/rosdep/sources.list.d/20-default.list
+Please delete if you wish to re-initialize
+```
+
+Then run:
+```
+sudo rm -r /etc/ros
+sudo rosdep init
+```
 
 ## Gperftools
 
