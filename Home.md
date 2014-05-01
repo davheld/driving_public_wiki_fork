@@ -12,3 +12,5 @@ Welcome to the Stanford Autonomous Driving Project's Software wiki. This site is
 * [[Software installation]]: from installing Ubuntu to compiling the code.
 * [[Running the code]]
 * [[Using rndf_edit]]
+* [[Setting up QtCreator]]: QtCreateor is a popular IDE
+* [[Github workflow]]
