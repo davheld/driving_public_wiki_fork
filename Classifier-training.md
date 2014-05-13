@@ -1,4 +1,3 @@
-
 Get data, put it here.
 
     teichman@capek:/dysnomia/driving_catkin_advanced/src/driving/projects/nyt_demo/workspace$ l unlabeled_tds/2013/
@@ -61,3 +60,16 @@ Edit the classifier.gc directly to change the class name to something else. It's
 Merge classifiers.
 
     rosrun online_learning merge_classifiers 2014-02-04-cars.gc pedestrian.gc -o merged.gc
+
+Give the classifier a sensible name and host somewhere, then add a line like this to the classification CMakeLists.txt.
+
+    stdr_download_data(http://cs.stanford.edu/people/teichman/2013-06-12_classifier.gc FILENAME data/classifier.gc MD5 21ce608e5c5c8a3418b262b94c0e1f7b)
+
+Now the classifier will be downloaded when you run this:
+
+    catkin_make download_extra_data
+
+To update which classifier to use when driving:
+
+    teichman@capek:/dysnomia/driving_catkin_advanced$ rosed perception PerceptionParam.launch
+
