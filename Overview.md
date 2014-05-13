@@ -31,6 +31,18 @@ The `localize` module provides the offset between the UTM coordinates of the car
  * The simplest, called `fake_localizer` computes this offset by simply substracting the smooth coordinates from the UTM coordinates obtained from the latitude and longitude returned by the applanix. 
  * The other localizer, matches the observation from the velodyne with a map to refine the position estimate and compute the offset. How the map is obtained in the first place, and how the matching is done, is described in J. Levinson's thesis. The result is a localization with an accuracy of about 10cm.
 
+## TF frames
+
+`tf` is the ROS package that maintains the transforms between all the different coordinates frames on a robot. See http://wiki.ros.org/tf
+
+On Junior we have the following frames:
+
+ * `base_link` is the vehicle frame (base_link is the standard ROS name for that frame). It's origin is located on the roof top of the car at the back (somewhat above the IMU). It's x axis is pointing forward, y to the left and z up.
+ * below `base_link` are the sensors frames: `velodyne`, `ladybug`, etc. As the sensors don't move, the transform is a static one.
+ * the `smooth` frame's origin is where the applanix module was started. It's aligned with the UTM grid (x to the east, y towards north). The transform between `base_link` and `smooth` is the smooth coordinates of the car.
+ * the `utm` frame origin's is at the origin of the UTM tile 10S
+ * the `local_utm` frame is initialized where the localizer is started. The transform between the `utm` frame and the `local_utm` frame is fixed and is typically a large number because we are far from the origin of the `utm` frame. The transform between the `local_utm` and `smooth` frame is adjusted by the localizer (it's initially 0) to correct for odometric drift.
+
 ## Perception
 
 The perception module, in its current state, uses only the information from the velodyne. This means that the perception range is of about 50m, and that there is no color information, and compared to a camera it's relatively low resolution.
