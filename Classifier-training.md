@@ -52,14 +52,14 @@ The induction view shows inducted tracks. 'I' re-loads the inducted set for visu
 
 When satisfied, C-c the process and copy the classifier.
 
-    teichman@capek:/dysnomia/driving_catkin_advanced/src/driving/projects/nyt_demo/workspace$ cp `find new_object_class/ -name classifier.gc | sort | tail -n1` classifier.gc
+    nyt_demo/workspace$ cp `find new_object_class/ -name classifier.gc | sort | tail -n1` classifier.gc
 
 
 Edit the classifier.gc directly to change the class name to something else. It's a mixed text / binary file but should be obvious at the top. Search for new_object_class.
 
 Merge classifiers.
 
-    rosrun online_learning merge_classifiers 2014-02-04-cars.gc pedestrian.gc -o merged.gc
+    $ rosrun online_learning merge_classifiers 2014-02-04-cars.gc pedestrian.gc -o merged.gc
 
 Give the classifier a sensible name and host somewhere, then add a line like this to the classification CMakeLists.txt.
 
@@ -67,9 +67,9 @@ Give the classifier a sensible name and host somewhere, then add a line like thi
 
 Now the classifier will be downloaded when you run this:
 
-    catkin_make download_extra_data
+    $ catkin_make download_extra_data
 
 To update which classifier to use when driving:
 
-    teichman@capek:/dysnomia/driving_catkin_advanced$ rosed perception PerceptionParam.launch
+    $ rosed perception PerceptionParam.launch
 
