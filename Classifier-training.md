@@ -31,7 +31,7 @@ Get data, put it here.
 
 Run group induction on this data.
 
-    teichman@capek:/dysnomia/driving_catkin_advanced/src/driving/projects/nyt_demo/workspace$ make new_object_class/induction 
+    catkin_ws/src/driving/projects/nyt_demo/workspace$ make new_object_class/induction 
 
 
 There are two views. First, the active learning view shows tracks from unlabeled data at random. Keys:
@@ -59,7 +59,7 @@ Edit the classifier.gc directly to change the class name to something else. It's
 
 Merge classifiers.
 
-    $ rosrun online_learning merge_classifiers 2014-02-04-cars.gc pedestrian.gc -o merged.gc
+    rosrun online_learning merge_classifiers 2014-02-04-cars.gc pedestrian.gc -o merged.gc
 
 Give the classifier a sensible name and host somewhere, then add a line like this to the classification CMakeLists.txt.
 
@@ -67,9 +67,9 @@ Give the classifier a sensible name and host somewhere, then add a line like thi
 
 Now the classifier will be downloaded when you run this:
 
-    $ catkin_make download_extra_data
+    catkin_make download_extra_data
 
 To update which classifier to use when driving:
 
-    $ rosed perception PerceptionParam.launch
+    rosed perception PerceptionParam.launch
 
