@@ -1,4 +1,12 @@
-# Intersections
+# Code structure
+
+The main class for the planner is `AWRoadPlanner` in `stdr_planners/aw_road_planner.h`. It complies with the `AbstractPlanner` interface, and is mostly a ROS wrapper around the `ChsmPlanner` class from package `aw_chsm_planning`.
+
+Btw, `aw` stands for Annie Way, which was the name of a team in one of the Darpa challenges. The planner was formerly called `paw2` which stands for Planner Annie Way. `Chsm` stands for Concurrent Hierarchical (Finite) State Machine. At the heart of the planner is a state machine, which is implemented using the boost statechart framework. The other main component of the planner is the trajectory generator, that derives from Moritz Werling's work.
+
+`AWRoadPlanner`'s main loop does one iteration of the state machine, which generates a trajectory, then publishes that trajectory. The planner's internal representation of the trajectory is stored in variable `trajectory_points_`.
+
+# Intersection states
 
 All relevant states are substates of StIntersection.
 
