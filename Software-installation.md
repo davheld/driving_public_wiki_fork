@@ -4,11 +4,13 @@ These instructions are currently being updated as the repository changes, if any
 
 The only tested system for running software is currently 64-bit Ubuntu 12.04. In general it should build on most *NIX distributions with the appropriate libraries and tools installed. It should even work in and Mac OSX. Note that you will need proper 3D graphics / hardware acceleration to be able to run rviz, the visualization software.
 
+In particular, it will not work with Ubuntu 14.04 and older!
+
 # Setup
 
 ## ROS
 
-We currently use ROS Hydro.
+We currently use ROS Hydro. The code won't work with any other version of ROS.
 
 ```
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu precise main" > /etc/apt/sources.list.d/ros-latest.list'
