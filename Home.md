@@ -8,3 +8,6 @@ Welcome to the Stanford Autonomous Driving Project's Software wiki. This site is
 ## HOWTOs
 
 * [[Software installation]]: from installing Ubuntu to compiling the code.
+* [[Running the code]]
+* [[Setting up QtCreator]]: QtCreateor is a popular IDE
+* [[Github workflow]]

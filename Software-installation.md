@@ -17,6 +17,18 @@ sudo apt-get update
 sudo apt-get install ros-hydro-desktop python-rosdep python-wstool
 sudo rosdep init
 ```
+Note: If you get the error:
+```
+ERROR: default sources list file already exists:
+	/etc/ros/rosdep/sources.list.d/20-default.list
+Please delete if you wish to re-initialize
+```
+
+Then run:
+```
+sudo rm -r /etc/ros
+sudo rosdep init
+```
 
 ## Gperftools
 
@@ -122,20 +134,4 @@ sudo ln -s /usr/lib/libGL.so
 sudo ln -s /usr/lib/libGL.so.1
 sudo ln -s /usr/lib/libGL.so.310.19
 
-# Running the code
-
 The environment variable ```VLR_ROOT``` needs to be defined (```export VLR_ROOT=~``` in your bashrc). It is used to locate the imagery data (```$VLR_ROOT/imagery```), but if you don't have the imagery data or don't need to work with it, you can set it to any location.
-
-As with the fuerte version, it is necessary to run a roscore first, and load some parameters. This is best achieved by:
-
-```
-roslaunch stdr_common junior2.launch
-```
-
-Also, for most of the packages, they will need some static transforms:
-
-```
-roslaunch stdr_common junior2-static-transforms.launch
-```
-
-Ignore the errors related to camera5, it's just that the transform is not defined (yet) for the top camera, and it does not matter as we don't use it.
